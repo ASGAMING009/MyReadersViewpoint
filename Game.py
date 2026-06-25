@@ -3,6 +3,44 @@ Inventory: list[str] = ["chocolate"]
 Items: list[str] = ["phone"]
 health = 100
 coins = 0
+def show_logo():
+    print("""
+   ╔══════════════════════════════════════════════════════════════╗
+   ║                                                              ║
+   ║     ███╗   ███╗██╗   ██╗██████╗ ███████╗ █████╗ ██████╗    ║
+   ║     ████╗ ████║╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗   ║
+   ║     ██╔████╔██║ ╚████╔╝ ██████╔╝███████╗███████║██║  ██║   ║
+   ║     ██║╚██╔╝██║  ╚██╔╝  ██╔══██╗╚════██║██╔══██║██║  ██║   ║
+   ║     ██║ ╚═╝ ██║   ██║   ██║  ██║███████║██║  ██║██████╔╝   ║
+   ║     ╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝    ║
+   ║                                                              ║
+   ║                   MyReadersViewpoint                         ║
+   ║                [ An ORV Fan Game ]                           ║
+   ║                                                              ║
+   ║          📖✨  THE OMNISCIENT EYE IS WATCHING  ✨🚇          ║
+   ║                                                              ║
+   ╚══════════════════════════════════════════════════════════════╝
+    """)
+def start_menu():
+    while True:
+        show_logo()
+        print("1. Start New Game")
+        print("2. Check Stats")
+        print("3. Exit")
+        Start_choice: str= input("Please Choose One:")
+        if Start_choice == "1":
+            print("Starting A new game...")
+            return
+        elif Start_choice == "2":
+            check_stats()
+            input("Press enter to go back")
+        elif Start_choice == "3":
+            print("Thanks for playing!")
+            exit()
+        else:
+            print("Invalid choice. Please try again.")
+            start_menu()
+
 def check_stats():
     print("\n=== SYSTEM STATUS ===")
     print(f"Health: {health}/100")
@@ -166,6 +204,7 @@ def sponsor_selection():
         time.sleep (3)
         print("You have read the story so you know that you can select a greater constallation or maybe create your own...")
 
+start_menu()
 prologue()
 first_scenario()
 dokkaebi_arrival()
