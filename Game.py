@@ -1,21 +1,25 @@
 import time
+#Global variables
 Inventory: list[str] = ["chocolate"]
 Items: list[str] = ["phone"]
 health = 100
 coins = 0
+stigma = "None"
+companions: list[str] = []
+
 def show_logo():
     print("""
    ╔══════════════════════════════════════════════════════════════╗
    ║                                                              ║
-   ║     ███╗   ███╗██╗   ██╗██████╗ ███████╗ █████╗ ██████╗    ║
-   ║     ████╗ ████║╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗   ║
-   ║     ██╔████╔██║ ╚████╔╝ ██████╔╝███████╗███████║██║  ██║   ║
-   ║     ██║╚██╔╝██║  ╚██╔╝  ██╔══██╗╚════██║██╔══██║██║  ██║   ║
-   ║     ██║ ╚═╝ ██║   ██║   ██║  ██║███████║██║  ██║██████╔╝   ║
-   ║     ╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝    ║
+   ║       ███╗   ███╗██╗   ██╗██████╗ ███████╗ █████╗ ██████╗    ║
+   ║       ████╗ ████║╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗   ║
+   ║       ██╔████╔██║ ╚████╔╝ ██████╔╝███████╗███████║██║  ██║   ║
+   ║       ██║╚██╔╝██║  ╚██╔╝  ██╔══██╗╚════██║██╔══██║██║  ██║   ║
+   ║       ██║ ╚═╝ ██║   ██║   ██║  ██║███████║██║  ██║██████╔╝   ║
+   ║       ╚═╝     ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝    ║
    ║                                                              ║
-   ║                   MyReadersViewpoint                         ║
-   ║                [ An ORV Fan Game ]                           ║
+   ║                     MyReadersViewpoint                       ║
+   ║                    [ An ORV Fan Game ]                       ║
    ║                                                              ║
    ║          📖✨  THE OMNISCIENT EYE IS WATCHING  ✨🚇          ║
    ║                                                              ║
@@ -45,6 +49,8 @@ def check_stats():
     print("\n=== SYSTEM STATUS ===")
     print(f"Health: {health}/100")
     print(f"Coins: {coins}")
+    print(f"Stigma: {stigma}")
+    print(f"Companions: {', '.join(companions) if companions else 'None'}")
     print("Inventory:")
     for item in Inventory:
         print("- " + item)
@@ -171,6 +177,7 @@ def dokkaebi_arrival():
         print("\n--- GAME OVER ---")
         quit()
 def sponsor_selection():
+    global sponsor, stigma
     print("\n--- SCENE 4: SPONSOR SELECTION ---")
     time.sleep(2)
     print("\nThe blood in the train car hasn't even dried yet.")
@@ -192,17 +199,93 @@ def sponsor_selection():
 
     choice: str = input("\nEnter 1, 2, 3, 4, or 5: ")
     if choice == "1":
-        print("You have chosen The Prisoner of the Golden Headband! You gain the power of Great Sun Wukong, granting you high attack capabilities.")
+        sponsor = "Prisoner of the Golden Headband"
+        stigma = "[Lightning Transformation]" 
+        print(f"\nYou have chosen {sponsor}!")
+        time.sleep(2)
+        print(f"The constellation looks upon you with a grin. They are thrilled by your choice and gift you the Stigma: [{stigma}]!")
+    
     elif choice == "2":
-        print("You have chosen The Demon-like Judge of Fire! You gain the power of Archangel Uriel, granting you fire abilities and a sense of justice.")
+        sponsor = "Demon-like Judge of Fire"
+        stigma = "[Hellfire]"
+        print(f"\nYou have chosen {sponsor}!")
+        time.sleep(2)
+        print(f"The constellation sheds tears of joy at your righteous heart. They happily bless you with the Stigma: [{stigma}]!")
+    
     elif choice == "3":
-        print("You have chosen The Secretive Plotter! You gain the power of an Unknown entity, granting you strategy and mystery.")
+        sponsor = "Secretive Plotter"
+        stigma = "[Plotter's Insight]"
+        print(f"\nYou have chosen {sponsor}!")
+        time.sleep(2)
+        print(f"The constellation chuckles in the dark. They find you highly amusing and grant you the Stigma: [{stigma}].")
+    
     elif choice == "4":
-        print("You have chosen The Abyssal Black Flame Dragon! You gain the power of the Chuunibyou Dragon, granting you pure destruction capabilities.")
+        sponsor = "Abyssal Black Flame Dragon"
+        stigma = "[Black Flame]"
+        print(f"\nYou have chosen {sponsor}!")
+        time.sleep(2)
+        print(f"The constellation roars with dark excitement. They welcome your destructive spirit and bestow the Stigma: [{stigma}]!")
+    
     else:
-        print("[You have chosen not to select a sponsor.]")
-        time.sleep (3)
-        print("You have read the story so you know that you can select a greater constallation or maybe create your own...")
+        print("\n[You have chosen not to select a sponsor.]")
+        stigma = "None"
+        time.sleep(3)
+        print("You have read the story, so you know you can select a greater constellation later, or maybe become one yourself...")
+
+def metro_aftermath():
+    print("\n--- SCENE 5: THE AFTERMATH ---")
+    time.sleep(2)
+    print("The sponsor selection ends. The heavy pressure in the air lifts.")
+    print("You look around the bloodied carriage. Only a few survived.")
+    time.sleep(3)
+    
+    print("\nA young woman with brown hair approaches you nervously. It's Yoo Sangah from your office.")
+    print("Behind her, a small boy is clutching a crushed insect box. His name is Lee Gilyoung.")
+    
+    companions.append("Yoo Sangah")
+    companions.append("Lee Gilyoung")
+    time.sleep(3)
+    
+    print("\n[Yoo Sangah and Lee Gilyoung have joined your party!]")
+    time.sleep(2)
+
+    while True:
+        print("\nWhat would you like to do before the doors open?")
+        print("1. Talk to Yoo Sangah")
+        print("2. Talk to Lee Gilyoung")
+        print("3. Check Stats")
+        print("4. Check Inventory")
+        print("5. Force the metro doors open and leave")
+        
+        action = input("\nChoose an action (1-5): ")
+        
+        if action == "1":
+            print("\nYoo Sangah: 'I... I don't understand what's happening. Did you really know this would happen?'")
+            time.sleep(2)
+            print("You reassure her that as long as she sticks with you, she will survive.")
+        
+        elif action == "2":
+            print("\nLee Gilyoung looks up at you silently. He seems completely unfazed by the blood.")
+            time.sleep(2)
+            print("He quietly hands you half of a candy bar. You pat his head.")
+            
+        elif action == "3":
+            check_stats()
+            
+        elif action == "4":
+            print("\nInventory:")
+            for item in Inventory:
+                print("- " + item)
+            time.sleep(2)
+            
+        elif action == "5":
+            print("\nYou decide it's time to face the ruined world outside.")
+            time.sleep(2)
+            # CHALLENGE 3: What command do you use here to escape this 'while True' loop 
+            # so the code can move on to the next scene?
+            return
+        else:
+            print("Invalid choice. Try again.")
 
 start_menu()
 prologue()
@@ -210,3 +293,4 @@ first_scenario()
 dokkaebi_arrival()
 check_stats()
 sponsor_selection()
+metro_aftermath()
