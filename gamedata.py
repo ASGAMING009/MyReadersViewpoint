@@ -1,4 +1,4 @@
-
+#Variables
 Inventory: list[str] = ["chocolate"]
 Items: list[str] = ["phone"]
 health = 100
