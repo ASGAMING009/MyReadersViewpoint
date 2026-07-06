@@ -28,17 +28,21 @@ def start_menu():
     while True:
         show_logo()
         print("1. Start New Game")
-        print("2. Check Stats")
-        print("3. Exit")
-        Start_choice: str = input("Please Choose One:")
+        print("2. Load Game")
+        print("3. Check Stats")
+        print("4. Exit")
+        Start_choice = input("\nPlease Choose One: ")
         
         if Start_choice == "1":
-            print("Starting A new game...")
+            print("Starting a new game...")
             return
         elif Start_choice == "2":
-            check_stats()
-            input("Press enter to go back")
+            gamedata.load_game()
+            return
         elif Start_choice == "3":
+            gamedata.check_stats()
+            input("Press enter to go back")
+        elif Start_choice == "4":
             print("Thanks for playing!")
             sys.exit()
         else:
@@ -98,11 +102,26 @@ def prologue():
 
 
 #  --- SEQUENCE ---
+# --- MAIN SEQUENCE (THE STORY DIRECTOR) ---
 start_menu()
-prologue()
-Scenario1.first_scenario()
-Scenario1.dokkaebi_arrival()
-Scenario1.check_stats()
-Scenario1.sponsor_selection()
-Scenario1.metro_aftermath()
-Scenario2.bridge_crossing()
+
+# 1. NEW GAME ROUTE
+if gamedata.current_scene == "prologue":
+    prologue()
+    Scenario1.first_scenario()
+    Scenario1.dokkaebi_arrival()
+    Scenario1.check_stats()
+    Scenario1.sponsor_selection()
+    
+    gamedata.current_scene = "metro_aftermath"
+
+# 2. AFTERMATH ROUTE (AND LOAD GAME DROP-IN POINT)
+if gamedata.current_scene == "metro_aftermath":
+    Scenario1.metro_aftermath()
+    
+    # Once they break out of the metro, update the tracker!
+    gamedata.current_scene = "bridge"
+
+# 3. BRIDGE ROUTE (AND LOAD GAME DROP-IN POINT)
+if gamedata.current_scene == "bridge":
+    Scenario2.bridge_crossing()

@@ -121,5 +121,11 @@ def bridge_crossing():
     print("\n[You have cleared the Sub Scenario!]")
     print("[You have been rewarded with 200 coins.]")
     time.sleep(2)
+    gamedata.current_scene = "Scenario3"
+    
+    save_opt = input("\n[System: Would you like to save your game? (yes/no)]: ")
+    if save_opt.lower() == "yes":
+        gamedata.save_game()
+    time.sleep(2)
     print("\nWelcome to the ruined world, Reader.")
     # End of scenario 2

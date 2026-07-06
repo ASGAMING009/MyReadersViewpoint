@@ -171,6 +171,7 @@ def sponsor_selection():
         print("You have read the story, so you know you can select a greater constellation later, or maybe become one yourself...")
 
 def metro_aftermath():
+    gamedata.current_scene = "metro_aftermath"
     print("\n--- SCENE 5: THE AFTERMATH ---")
     time.sleep(2)
     print("The sponsor selection ends. The heavy pressure in the air lifts.")
@@ -193,9 +194,10 @@ def metro_aftermath():
         print("2. Talk to Lee Gilyoung")
         print("3. Check Stats")
         print("4. Check Inventory")
-        print("5. Force the metro doors open and leave")
+        print("5. Save Game")
+        print("6. Force the metro doors open and leave")
         
-        action = input("\nChoose an action (1-5): ")
+        action = input("\nChoose an action (1-6): ")
         
         if action == "1":
             print("\nYoo Sangah: 'I... I don't understand what's happening. Did you really know this would happen?'")
@@ -217,6 +219,9 @@ def metro_aftermath():
             time.sleep(2)
             
         elif action == "5":
+            gamedata.save_game()
+            
+        elif action == "6":
             print("\nYou decide it's time to face the ruined world outside.")
             time.sleep(2)
             break

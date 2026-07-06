@@ -11,7 +11,6 @@ class Stigma:
         print(f"You have used the Stigma: {self.name}.")
         print(f"Effect: {self.description}")
 
-# 1. Build the specific Stigma using the blueprint
 Uriel_power = Stigma("Hellfire", "Summons the cleansing flames of Eden to burn your enemies to ash.")
 
 Wukong_power = Stigma("Lightning Transformation", "Transforms into a powerful being with enhanced speed and strength.")
