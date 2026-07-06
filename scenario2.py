@@ -78,7 +78,7 @@ def bridge_crossing():
             time.sleep(3)
             print("The thugs laugh at your dramatic pose.")
             print("The Thug Leader walks over and shoves you off the broken bridge.")
-            time.sleep(3)
+            time.sleep(2)
             print("The Ichthyosaur opens its massive jaws...")
             print("\n--- GAME OVER ---")
             sys.exit()

@@ -112,14 +112,13 @@ if gamedata.current_scene == "prologue":
     Scenario1.dokkaebi_arrival()
     Scenario1.check_stats()
     Scenario1.sponsor_selection()
-    
+
     gamedata.current_scene = "metro_aftermath"
 
 # 2. AFTERMATH ROUTE (AND LOAD GAME DROP-IN POINT)
 if gamedata.current_scene == "metro_aftermath":
     Scenario1.metro_aftermath()
     
-    # Once they break out of the metro, update the tracker!
     gamedata.current_scene = "bridge"
 
 # 3. BRIDGE ROUTE (AND LOAD GAME DROP-IN POINT)

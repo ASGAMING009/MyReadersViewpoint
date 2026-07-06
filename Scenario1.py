@@ -24,14 +24,12 @@ def first_scenario():
         print("\nThe metro screeches to a sudden halt. Everyone starts murmuring, confused by the delay.")
         time.sleep(3)
         
-        # --- NEW HINTS ADDED HERE ---
+        
         print("\nYou look around the carriage. Sitting a few seats away is Yoo Sangah from your company's HR department, looking worried.")
         time.sleep(3)
         print("Near the doors, you notice a young boy crouching down. He is clutching a small, plastic insect collection box.")
         print("An eerie sense of deja vu washes over you...")
         time.sleep(4)
-        # ----------------------------
-        
         print("\nYou look into your phone and see a notification that opens an email with the following message:")
         print("'Here is the link to the novel, hope this helps you during the adventure: https://www.webtoons.com/en/action/omniscient-reader/list?title_no=2154'")
         time.sleep(3)
