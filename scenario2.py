@@ -127,5 +127,5 @@ def bridge_crossing():
     if save_opt.lower() == "yes":
         gamedata.save_game()
     time.sleep(2)
-    print("\nWelcome to the ruined world, Reader.")
+    print("\nWelcome to the Ruined World, Reader.")
     # End of scenario 2
