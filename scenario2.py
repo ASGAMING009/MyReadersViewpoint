@@ -55,7 +55,7 @@ def bridge_crossing():
     print("The Constellations are watching you closely. What do you do?")
     time.sleep(2)
     
-    print("\n1. [Unleash Stigma" + {gamedata.stigma} + "] - Use the power your Constellation gave you to fight the thugs.")
+    print(f"\n1. [Unleash Stigma {gamedata.stigma}] - Use the power your Constellation gave you to fight the thugs.")
     print("2. [Ruthless Survival] - Push the Thug Leader into the river to distract the monster.")
     print("3. [Deus Ex Machina] - Stand your ground and wait for the Constellations to create a bridge of light.")
     

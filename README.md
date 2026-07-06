@@ -1,1 +1,1 @@
-Just Run the Game.py
+Just Run the Run.py file
