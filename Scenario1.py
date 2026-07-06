@@ -1,6 +1,6 @@
 import time
 import sys
-import Scenario2
+import Stigma
 import gamedata
 import json
 
@@ -134,37 +134,39 @@ def sponsor_selection():
     print("5. [Skip Sponsor Selection] (No Sponsor - No Powers)")
 
     choice: str = input("\nEnter 1, 2, 3, 4, or 5: ")
+    
     if choice == "1":
         gamedata.sponsor = "Prisoner of the Golden Headband"
-        gamedata.stigma = "[Lightning Transformation]" 
+        gamedata.stigma = Stigma.Wukong_power 
         print(f"\nYou have chosen {gamedata.sponsor}!")
         time.sleep(2)
         print(f"The constellation looks upon you with a grin. They are thrilled by your choice and gift you the Stigma: {gamedata.stigma}!")
     
     elif choice == "2":
         gamedata.sponsor = "Demon-like Judge of Fire"
-        gamedata.stigma = "[Hellfire]"
+        gamedata.stigma = Stigma.Uriel_power
         print(f"\nYou have chosen {gamedata.sponsor}!")
         time.sleep(2)
         print(f"The constellation sheds tears of joy at your righteous heart. They happily bless you with the Stigma: {gamedata.stigma}!")
     
     elif choice == "3":
         gamedata.sponsor = "Secretive Plotter"
-        gamedata.stigma = "[Plotter's Insight]"
+        gamedata.stigma = Stigma.Plotter_power
         print(f"\nYou have chosen {gamedata.sponsor}!")
         time.sleep(2)
         print(f"The constellation chuckles in the dark. They find you highly amusing and grant you the Stigma: {gamedata.stigma}.")
     
     elif choice == "4":
         gamedata.sponsor = "Abyssal Black Flame Dragon"
-        gamedata.stigma = "[Black Flame]"
+        gamedata.stigma = Stigma.Abyssal_power
         print(f"\nYou have chosen {gamedata.sponsor}!")
         time.sleep(2)
         print(f"The constellation roars with dark excitement. They welcome your destructive spirit and bestow the Stigma: {gamedata.stigma}!")
     
     else:
         print("\n[You have chosen not to select a sponsor.]")
-        gamedata.stigma = "None"
+        gamedata.sponsor = "None"
+        gamedata.stigma = Stigma.No_power
         time.sleep(3)
         print("You have read the story, so you know you can select a greater constellation later, or maybe become one yourself...")
 

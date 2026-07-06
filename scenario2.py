@@ -1,6 +1,7 @@
 import time
 import sys
 import gamedata
+import Stigma
 
 def bridge_crossing():
     print("\n" + "="*50)
@@ -54,6 +55,7 @@ def bridge_crossing():
     print("\nYoo Sangah steps back in fear. Lee Gilyoung grabs the edge of your shirt.")
     print("The Constellations are watching you closely. What do you do?")
     time.sleep(2)
+
     
     print(f"\n1. [Unleash Stigma {gamedata.stigma}] - Use the power your Constellation gave you to fight the thugs.")
     print("2. [Ruthless Survival] - Push the Thug Leader into the river to distract the monster.")
@@ -64,11 +66,28 @@ def bridge_crossing():
     if choice == "1":
         print("\nYou step in front of your companions, your eyes glowing with the power of your Constellation.")
         time.sleep(3)
-        print("You unleash your Stigma! The raw power slams into the thugs, throwing them backward.")
-        print("The Constellations in your channel cheer at the brilliant display of power!")
-        time.sleep(4)
-        print("While the thugs are down, a glowing bridge of light—a Deus Ex Machina—suddenly materializes across the gap!")
         
+       
+        print("\n" + "="*40)
+        gamedata.stigma.use()  
+        print("="*40 + "\n")
+        time.sleep(4)
+        
+        if gamedata.stigma.name == "None":
+            print("Wait... you don't have a Stigma! Absolutely nothing happens!")
+            time.sleep(3)
+            print("The thugs laugh at your dramatic pose.")
+            print("The Thug Leader walks over and shoves you off the broken bridge.")
+            time.sleep(3)
+            print("The Ichthyosaur opens its massive jaws...")
+            print("\n--- GAME OVER ---")
+            sys.exit()
+            
+        else:
+            print("The raw power slams into the thugs, throwing them backward.")
+            print("The Constellations in your channel cheer at the brilliant display of power!")
+            time.sleep(4)
+            print("While the thugs are down, a glowing bridge of light—a Deus Ex Machina—suddenly materializes across the gap!")     
     elif choice == "2":
         print("\nYou don't hesitate. You grab the Thug Leader by the collar and hurl him off the edge!")
         time.sleep(3)
