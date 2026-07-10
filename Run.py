@@ -1,7 +1,7 @@
 import time
 import sys
-import Scenario1
-import Scenario2
+import Scenarios.Scenario1 as Scenario1
+import Scenarios.Scenario2 as Scenario2
 import gamedata
 import json
 
