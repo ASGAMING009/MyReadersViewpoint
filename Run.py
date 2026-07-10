@@ -105,7 +105,6 @@ def prologue():
 
 start_menu()
 
-current_scene = "prologue"
 
 if gamedata.current_scene == "prologue":
     prologue()

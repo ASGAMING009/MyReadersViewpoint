@@ -2,7 +2,7 @@ import time
 import Stigma
 import json
 
-
+current_scene = "prologue"
 
 def save_game():
     save_data = {
