@@ -27,11 +27,11 @@ This game uses a modular, multi-file architecture:
    git clone [https://github.com/ASGAMING009/MyReadersViewpoint.git](https://github.com/ASGAMING009/MyReadersViewpoint.git)
 Navigate to the project folder:
 
-Bash
+'''bash 
 cd MyReadersViewpoint
 Run the game:
 
-Bash
+'''bash
 python game.py
 💾 Saving and Loading
 To save your progress, wait until you reach a safe "Hub Area" (like the Metro Aftermath) and select the Save Game option from the menu. Your progress will be written to orv_save.json.
