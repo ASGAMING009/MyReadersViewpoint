@@ -2,6 +2,8 @@ import time
 import Stigma
 import json
 
+
+
 def save_game():
     save_data = {
         "Inventory": Inventory,
@@ -18,6 +20,10 @@ def save_game():
     
     print("\n[System: Game Progress Saved Successfully!]")
     time.sleep(2)
+
+
+
+
 
 def load_game():
     global Inventory, Items, health, coins, sponsor, stigma, companions, current_scene
@@ -49,6 +55,8 @@ def load_game():
         print("\n[System: No saved game found.]")
         time.sleep(2)
 
+
+
 #My Variables
 Inventory: list[str] = ["chocolate"]
 Items: list[str] = ["phone"]
@@ -58,6 +66,8 @@ sponsor = "None"
 stigma = "None"
 companions: list[str] = []
 
+
+
 def check_stats():
     print("\n=== SYSTEM STATUS ===")
     print(f"Health: {health}/100")  
@@ -66,5 +76,7 @@ def check_stats():
     print(f"Stigma: {stigma}")
     print(f"Companions: {', '.join(companions) if companions else 'None'}")
     time.sleep(3)
+
+
 
 stigma = Stigma.No_power

@@ -101,11 +101,12 @@ def prologue():
 
 
 
-#  --- SEQUENCE ---
-# --- MAIN SEQUENCE (THE STORY DIRECTOR) ---
+
+
 start_menu()
 
-# 1. NEW GAME ROUTE
+current_scene = "prologue"
+
 if gamedata.current_scene == "prologue":
     prologue()
     Scenario1.first_scenario()
@@ -113,14 +114,14 @@ if gamedata.current_scene == "prologue":
     Scenario1.check_stats()
     Scenario1.sponsor_selection()
 
-    gamedata.current_scene = "metro_aftermath"
+gamedata.current_scene = "metro_aftermath"
 
-# 2. AFTERMATH ROUTE (AND LOAD GAME DROP-IN POINT)
+
 if gamedata.current_scene == "metro_aftermath":
     Scenario1.metro_aftermath()
     
     gamedata.current_scene = "bridge"
 
-# 3. BRIDGE ROUTE (AND LOAD GAME DROP-IN POINT)
+
 if gamedata.current_scene == "bridge":
     Scenario2.bridge_crossing()
